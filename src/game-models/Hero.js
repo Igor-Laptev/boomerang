@@ -19,7 +19,15 @@ class Hero {
 
   attack() {
     // Атакуем.
-    this.boomerang.fly();
+    this.boomerang.position===this.position+1
+      this.boomerang.moveRight()
+     // if (this.hero.boomerang.position<this.hero.position) {
+     //   this.hero.boomerang.position===this.hero.position+1
+     
+    if (this.boomerang.position=this.position) {
+      this.boomerang.moveLeft()
+    }
+    
   }
 
   die() {

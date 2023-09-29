@@ -28,6 +28,7 @@ class Game {
     this.track = new Array(this.trackLength).fill(" ");
     this.track[this.hero.position] = this.hero.skin;
     this.track[this.enemy.position] = this.enemy.skin;
+    //if (this.hero.attack())
     this.track[this.hero.boomerang.position] = this.hero.boomerang.skin;
   }
 
@@ -38,6 +39,7 @@ class Game {
     if (this.hero.boomerang.position <= this.enemy.position - 1) {
       // this.hero.boomerang.moveRight();
       this.enemy.moveLeft();
+      this.hero.boomerang.moveRight()
     } else {
       this.hero.boomerang.moveLeft();
     }
@@ -49,9 +51,10 @@ class Game {
       // this.enemy = new Enemy();
     }
     if (
-      this.hero.boomerang.position === this.hero.position &&
+      this.hero.boomerang.position === this.hero.position+1 &&
       this.def === true
     ) {
+      
       this.enemy.die();
       // this.view.count += '💀'
       this.enemy = new Enemy();
