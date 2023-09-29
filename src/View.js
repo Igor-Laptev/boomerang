@@ -1,13 +1,17 @@
 // Сделаем отдельный класс для отображения игры в консоли.
 
 class View {
-  render() {
-    const yourTeamName = 'Elbrus';
+  constructor(game) {
+    this.game = game;
+    this.count = "";
+  }
+  render(track) {
+    const yourTeamName = "Elbrus";
 
     // Тут всё рисуем.
     console.clear();
-    console.log(this.game.track.join(''));
-    console.log('\n\n');
+    console.log(track.join(""));
+    console.log(`\n\n  Your OWNED ${this.count} demons, foxie`);
     console.log(`Created by "${yourTeamName}" with love`);
   }
 }
